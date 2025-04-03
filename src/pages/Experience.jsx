@@ -1448,14 +1448,6 @@ const ExperienceTimeline = () => {
   );
   const cardRefs = useRef([]);
     {
-      date: "March 2025 – Present",
-      role: "Software Development Engineer - I",
-      type: "Full-time",
-      company: "TAILSHUG",
-      location: "Bangalore, Karnataka",
-      description: "Developing a cross-platform pet services app using Flutter, NestJS, and TypeScript, implementing scalable APIs, real-time booking, secure authentication, and optimized state management."
-    },
-    {
       date: "May 2024 – July 2024",
       role: "Full-Stack Developer Intern",
       type: "Internship",
