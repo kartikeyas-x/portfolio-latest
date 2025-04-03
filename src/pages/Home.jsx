@@ -2079,9 +2079,9 @@ const Home = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
   {
-    title: "AI Art Generator",
-    description: "A neural network-based art generator using stable diffusion",
-    tags: ["Python", "PyTorch", "React"],
+    title: "AI Diagnosis Predictor",
+    description: "Machine learning system for predicting medical diagnoses using patient data and symptoms",
+    tags: ["TensorFlow", "Python", "scikit-learn"],
     link: "#"
   },
   {
