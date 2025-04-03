@@ -1405,7 +1405,7 @@ import AnimatedText from '../components/AnimatedText';
 const ExperienceTimeline = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [mousePositions, setMousePositions] = useState(
-    new Array(4).fill({ x: 0, y: 0 })
+    Array(timelineData.length).fill().map(() => ({ x: 0, y: 0 }))
   );
   const cardRefs = useRef([]);
 
