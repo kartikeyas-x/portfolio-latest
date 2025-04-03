@@ -263,33 +263,40 @@ import ProjectCard from '../components/ProjectCard';
 const projects = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce platform built with React and Node.js",
-    tags: ["React", "Node.js", "MongoDB"],
+    title: "IOT Smart Metering System",
+    description: "Real-time IOT based smart metering system with prepaid bill generation capabilities",
+    tags: ["IoT", "Real-time", "Hardware"],
     category: "Full Stack",
-    image: "/api/placeholder/600/400",
-    github: "https://github.com",
-    live: "https://example.com"
-  },
-  {
-    id: 2,
-    title: "Portfolio Website",
-    description: "A modern portfolio website with smooth animations",
-    tags: ["React", "Tailwind", "Framer Motion"],
-    category: "Frontend",
-    image: "/api/placeholder/600/400",
-    github: "https://github.com",
-    live: "https://example.com"
-  },
-  {
-    id: 3,
-    title: "Task Management API",
-    description: "RESTful API for task management application",
-    tags: ["Node.js", "Express", "MongoDB"],
-    category: "Backend",
     image: "/api/placeholder/600/400",
     github: "https://github.com"
   },
+  {
+    id: 2,
+    title: "CARYA - SAAS E-commerce",
+    description: "A full-featured web app for buying trekking equipment with dynamic product management, secure payments, and role-based dashboards",
+    tags: ["React", "Node.js", "MongoDB", "Express"],
+    category: "Full Stack",
+    image: "/api/placeholder/600/400",
+    github: "https://github.com"
+  },
+  {
+    id: 3,
+    title: "LUMEN - AI Assistant",
+    description: "AI-powered assistant using image detection and speech transcription to answer questions with memory retention capabilities",
+    tags: ["AI", "Computer Vision", "NLP"],
+    category: "Full Stack",
+    image: "/api/placeholder/600/400",
+    github: "https://github.com"
+  },
+  {
+    id: 4,
+    title: "Real-time Collaboration Tool",
+    description: "Real-time document editing app with live collaboration, file sharing, version control, and JWT authentication",
+    tags: ["React.js", "Socket.io", "Node.js"],
+    category: "Full Stack",
+    image: "/api/placeholder/600/400",
+    github: "https://github.com"
+  }
 ];
 
 const Projects = () => {
