@@ -1,0 +1,23 @@
+The above error occurred in the <ExperienceTimeline> component:
+
+    at ExperienceTimeline (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/src/pages/Experience.jsx:24:45)
+    at RenderedRoute (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/react-router-dom.js?v=9e13b7e7:5360:26)
+    at Routes (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/react-router-dom.js?v=9e13b7e7:6090:3)
+    at div
+    at Router (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/react-router-dom.js?v=9e13b7e7:6033:13)
+    at BrowserRouter (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/react-router-dom.js?v=9e13b7e7:8072:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+Cannot access 'timelineData' before initialization
+at ExperienceTimeline (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/src/pages/Experience.jsx:26:11)
+at renderWithHooks (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/chunk-NUMECXU6.js?v=9e13b7e7:11548:26)
+at mountIndeterminateComponent (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/chunk-NUMECXU6.js?v=9e13b7e7:14926:21)
+at beginWork (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/chunk-NUMECXU6.js?v=9e13b7e7:15914:22)
+at beginWork$1 (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/chunk-NUMECXU6.js?v=9e13b7e7:19753:22)
+at performUnitOfWork (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/chunk-NUMECXU6.js?v=9e13b7e7:19198:20)
+at workLoopSync (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/chunk-NUMECXU6.js?v=9e13b7e7:19137:13)
+at renderRootSync (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/chunk-NUMECXU6.js?v=9e13b7e7:19116:15)
+at recoverFromConcurrentError (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/chunk-NUMECXU6.js?v=9e13b7e7:18736:28)
+at performConcurrentWorkOnRoot (https://5089664c-9a79-4ff4-bb13-dc5bfd753e30-00-3e2zfrjukorr4.sisko.replit.dev:8080/node_modules/.vite/deps/chunk-NUMECXU6.js?v=9e13b7e7:18684:30)
