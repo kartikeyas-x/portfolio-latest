@@ -129,37 +129,37 @@ const Navbar = () => {
 
             {/* Right section with theme toggle and Spotify */}
             <div className="flex items-center space-x-4">
-              {/* Spotify Integration */}
-              {isSpotifyConnected ? (
-                <div className="flex items-center space-x-2">
-                  {currentTrack && (
-                    <span className="text-xs text-[#766e65] dark:text-[#bdb7ae] max-w-[100px] truncate font-poppins">
-                      {currentTrack.name}
-                    </span>
-                  )}
-                  <button
-                    onClick={togglePlayPause}
-                    className="group p-2 text-[#766e65] hover:text-[#4a4643] 
-                      dark:text-[#bdb7ae] dark:hover:text-[#e8e3d9] 
-                      transition-all duration-300 
-                      hover:scale-110 active:scale-95"
-                    aria-label="Play/Pause"
-                  >
-                    {isPlaying ? <Pause size={18} /> : <Play size={18} />}
-                  </button>
-                </div>
-              ) : (
+              {/* Music Player */}
+              <div className="flex items-center space-x-2">
                 <button
-                  onClick={connectSpotify}
-                  className="group p-2 text-[#766e65] hover:text-[#4a4643] 
+                  onClick={togglePlayPause}
+                  className="group relative flex items-center space-x-2 px-3 py-1.5 
+                    text-[#766e65] hover:text-[#4a4643] 
                     dark:text-[#bdb7ae] dark:hover:text-[#e8e3d9] 
                     transition-all duration-300 
-                    hover:scale-110 active:scale-95"
-                  aria-label="Connect Spotify"
+                    hover:bg-black/5 dark:hover:bg-white/5 rounded-full"
+                  aria-label="Music control"
                 >
-                  <Music size={18} />
+                  {isPlaying ? (
+                    <>
+                      <Pause size={16} />
+                      <span className="text-xs font-medium opacity-80">Pause</span>
+                    </>
+                  ) : (
+                    <>
+                      <Play size={16} />
+                      <span className="text-xs font-medium opacity-80">Play</span>
+                    </>
+                  )}
                 </button>
-              )}
+                {currentTrack && (
+                  <div className="hidden md:block">
+                    <span className="text-xs text-[#766e65] dark:text-[#bdb7ae] max-w-[120px] truncate font-poppins">
+                      {currentTrack.name}
+                    </span>
+                  </div>
+                )}
+              </div>
 
               {/* Theme Toggle */}
               <button
