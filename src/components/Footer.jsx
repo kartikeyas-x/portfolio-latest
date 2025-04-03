@@ -98,7 +98,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <style>{`
+      <style jsx>{`
         @keyframes fade-in {
           from {
             opacity: 0;
