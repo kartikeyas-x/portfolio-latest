@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const ProjectCard = ({ project, className = '' }) => {
@@ -27,7 +28,7 @@ const ProjectCard = ({ project, className = '' }) => {
   return (
     <div 
       className={`relative overflow-hidden group rounded-lg transition-all duration-300 
-        border border-transparent hover:border-[#8b7355]/20 
+        border border-transparent hover:border-[#8b7355]/20 h-full
         ${className}`}
       onMouseMove={handleMouseMove}
       style={{
@@ -43,24 +44,24 @@ const ProjectCard = ({ project, className = '' }) => {
         }}
       />
 
-      <div className="flex flex-col md:flex-row gap-4">
-        <div className="md:w-1/2 overflow-hidden rounded-sm relative z-10 transition-all duration-300 
+      <div className="flex flex-col h-full">
+        <div className="relative z-10 transition-all duration-300 
           group-hover:scale-[1.02] group-hover:shadow-lg">
           <img
             src={image}
             alt={title}
-            className="w-full h-48 md:h-full object-cover transform transition-transform duration-300 
+            className="w-full h-48 object-cover transform transition-transform duration-300 
               group-hover:scale-105 group-hover:brightness-110"
           />
         </div>
 
-        <div className="md:w-1/2 relative z-10 px-4 pb-4 font-poppins">
+        <div className="relative z-10 p-4 flex flex-col flex-grow">
           <h3 className="text-xl sm:text-2xl font-lora font-light text-[#4a3f35] dark:text-[#e8e3d9] mb-2 
             transition-all duration-300 
             group-hover:translate-x-1 group-hover:text-opacity-90">
             {title}
           </h3>
-          <p className="text-sm sm:text-base font-poppins text-[#665544] dark:text-[#bdb7ae] mb-3 
+          <p className="text-sm sm:text-base font-poppins text-[#665544] dark:text-[#bdb7ae] mb-3 flex-grow
             transition-all duration-300 
             group-hover:translate-x-2 group-hover:text-opacity-80">
             {description}

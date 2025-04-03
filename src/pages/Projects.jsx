@@ -1,3 +1,4 @@
+
 import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import ParticleBackground from '../components/ParticleBackground';
@@ -44,7 +45,7 @@ const projects = [
 ];
 
 const Projects = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(3);
   const cardRefs = useRef([]);
 
   const nextProject = () => {
@@ -81,7 +82,7 @@ const Projects = () => {
         <ParticleBackground />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,66 +101,73 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        {/* Slideshow Container */}
-        <div className="relative max-w-3xl mx-auto">
-          <AnimatePresence mode="wait">
+        {/* Main Projects Display */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {projects.slice(0, 3).map((project, index) => (
             <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
-              className="w-full"
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              ref={(el) => cardRefs.current[index] = el}
+              onMouseMove={(e) => handleMouseMove(e, index)}
+              onMouseLeave={() => handleMouseLeave(index)}
+              className="transform transition-all duration-300"
             >
-              <div
-                ref={(el) => cardRefs.current[currentIndex] = el}
-                onMouseMove={(e) => handleMouseMove(e, currentIndex)}
-                onMouseLeave={() => handleMouseLeave(currentIndex)}
-                style={{ 
-                  transition: 'transform 0.1s ease-out',
-                  transformStyle: 'preserve-3d' 
-                }}
-                className="cursor-pointer"
-              >
-                <ProjectCard 
-                  project={projects[currentIndex]}
-                  className="w-full p-6 rounded-sm 
-                    bg-white dark:bg-[#242020] 
-                    border border-[#e5ded5] dark:border-[#363030]
-                    hover:border-[#8b7355] dark:hover:border-[#a69887] 
-                    transition-all duration-300"
-                />
-              </div>
+              <ProjectCard project={project} />
             </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation Buttons */}
-          <div className="flex justify-between items-center mt-8">
-            <button
-              onClick={prevProject}
-              className="px-4 py-2 bg-[#8b7355] text-white rounded-full hover:bg-[#a69887] transition-colors duration-300"
-            >
-              Previous
-            </button>
-            <div className="flex space-x-2">
-              {projects.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                    idx === currentIndex ? 'bg-[#8b7355]' : 'bg-[#e5ded5] dark:bg-[#363030]'
-                  }`}
-                />
-              ))}
-            </div>
-            <button
-              onClick={nextProject}
-              className="px-4 py-2 bg-[#8b7355] text-white rounded-full hover:bg-[#a69887] transition-colors duration-300"
-            >
-              Next
-            </button>
-          </div>
+          ))}
         </div>
+
+        {/* Additional Projects Slideshow */}
+        {projects.length > 3 && (
+          <div className="mt-12">
+            <h3 className="text-2xl font-lora text-center mb-8 text-[#4a3f35] dark:text-[#e8e3d9]">
+              More Projects
+            </h3>
+            <div className="relative max-w-3xl mx-auto">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full"
+                >
+                  <ProjectCard project={projects[currentIndex]} />
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Navigation */}
+              <div className="flex justify-between items-center mt-8">
+                <button
+                  onClick={prevProject}
+                  className="px-4 py-2 bg-[#8b7355] text-white rounded-full hover:bg-[#a69887] transition-colors duration-300"
+                >
+                  Previous
+                </button>
+                <div className="flex space-x-2">
+                  {projects.slice(3).map((_, idx) => (
+                    <button
+                      key={idx + 3}
+                      onClick={() => setCurrentIndex(idx + 3)}
+                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        idx + 3 === currentIndex ? 'bg-[#8b7355]' : 'bg-[#e5ded5] dark:bg-[#363030]'
+                      }`}
+                    />
+                  ))}
+                </div>
+                <button
+                  onClick={nextProject}
+                  className="px-4 py-2 bg-[#8b7355] text-white rounded-full hover:bg-[#a69887] transition-colors duration-300"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
