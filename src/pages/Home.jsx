@@ -2077,33 +2077,63 @@ const Home = () => {
                 SELECTED PROJECTS
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[1, 2, 3].map((item, index) => (
-                  <motion.div
-                    key={item}
-                    className="group relative bg-[#fff] dark:bg-[#242020] p-6 rounded-sm 
-                      border border-[#e5ded5] dark:border-[#363030]
-                      hover:border-[#8b7355] dark:hover:border-[#a69887] 
-                      transition-all duration-300"
-                    whileHover={{ 
-                      y: -10,
-                      scale: 1.03,
-                      boxShadow: "0 10px 15px rgba(0,0,0,0.1)"
-                    }}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.2, duration: 0.8 }}
-                  >
-                    <span className="text-xs text-[#8b7355] dark:text-[#a69887] tracking-wider">
-                      PROJECT {item}
-                    </span>
-                    <h3 className="text-xl font-lora mt-2 mb-3 text-[#4a3f35] dark:text-[#e8e3d9]">
-                      Minimal Design
-                    </h3>
-                    <p className="text-sm text-[#665544] dark:text-[#bdb7ae] font-poppins">
-                      Clean and minimal approach to digital experiences.
-                    </p>
-                  </motion.div>
-                ))}
+                {[
+  {
+    title: "AI Art Generator",
+    description: "A neural network-based art generator using stable diffusion",
+    tags: ["Python", "PyTorch", "React"],
+    link: "#"
+  },
+  {
+    title: "Portfolio v2",
+    description: "An immersive, interactive portfolio with 3D elements",
+    tags: ["React", "Three.js", "Framer Motion"],
+    link: "#"
+  },
+  {
+    title: "Smart Home Dashboard",
+    description: "IoT dashboard for monitoring and controlling smart devices",
+    tags: ["React", "Node.js", "MQTT"],
+    link: "#"
+  }
+].map((project, index) => (
+  <motion.div
+    key={project.title}
+    className="group relative bg-[#fff] dark:bg-[#242020] p-6 rounded-sm 
+      border border-[#e5ded5] dark:border-[#363030]
+      hover:border-[#8b7355] dark:hover:border-[#a69887] 
+      transition-all duration-300 overflow-hidden"
+    whileHover={{ 
+      y: -10,
+      scale: 1.03,
+      boxShadow: "0 10px 15px rgba(0,0,0,0.1)"
+    }}
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: index * 0.2, duration: 0.8 }}
+  >
+    <div className="absolute -right-12 -top-12 w-24 h-24 bg-[#8b7355] dark:bg-[#a69887] opacity-10 rounded-full transform group-hover:scale-150 transition-transform duration-500"></div>
+    <span className="text-xs text-[#8b7355] dark:text-[#a69887] tracking-wider">
+      FEATURED PROJECT
+    </span>
+    <h3 className="text-xl font-lora mt-2 mb-3 text-[#4a3f35] dark:text-[#e8e3d9]">
+      {project.title}
+    </h3>
+    <p className="text-sm text-[#665544] dark:text-[#bdb7ae] font-poppins mb-4">
+      {project.description}
+    </p>
+    <div className="flex flex-wrap gap-2 mb-3">
+      {project.tags.map(tag => (
+        <span key={tag} className="text-xs px-2 py-1 bg-[#f0e6d6] dark:bg-[#363030] text-[#8b7355] dark:text-[#a69887] rounded-full">
+          {tag}
+        </span>
+      ))}
+    </div>
+    <a href={project.link} className="text-sm text-[#8b7355] dark:text-[#a69887] hover:underline inline-flex items-center">
+      View Project <span className="ml-1">→</span>
+    </a>
+  </motion.div>
+))}
               </div>
             </motion.div>
           </div>
