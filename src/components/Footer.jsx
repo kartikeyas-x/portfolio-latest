@@ -73,11 +73,10 @@ const Footer = () => {
           {/* Social Media Icons */}
           <div className="flex space-x-4">
             {[
-              { Icon: Github, href: "https://github.com" },
-              { Icon: Linkedin, href: "https://linkedin.com" },
-              { Icon: Mail, href: "mailto:your.email@example.com" },
-              { Icon: Twitter, href: "https://twitter.com" },
-              { Icon: Instagram, href: "https://instagram.com" },
+              { Icon: Github, href: "https://github.com/kartikeyas-x" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/kartikeya-dhanwaria/" },
+              { Icon: Mail, href: "mailto:kartikeyasoni@gmail.com" },
+              { Icon: Twitter, href: "https://x.com/Kartikeya_soni1" },
             ].map(({ Icon, href }) => (
               <a
                 key={href}
