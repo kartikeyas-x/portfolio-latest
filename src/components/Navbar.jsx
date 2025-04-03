@@ -131,21 +131,37 @@ const Navbar = () => {
             <div className="flex items-center space-x-4">
               {/* Spotify Integration */}
               {isSpotifyConnected ? (
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 bg-opacity-20 bg-[#766e65] dark:bg-[#bdb7ae] rounded-full px-3 py-1">
                   {currentTrack && (
-                    <span className="text-xs text-[#766e65] dark:text-[#bdb7ae] max-w-[100px] truncate font-poppins">
-                      {currentTrack.name}
-                    </span>
+                    <div className="flex items-center">
+                      <span className="text-xs text-[#766e65] dark:text-[#bdb7ae] max-w-[100px] truncate font-poppins animate-marquee">
+                        {currentTrack.name}
+                      </span>
+                    </div>
                   )}
                   <button
                     onClick={togglePlayPause}
-                    className="group p-2 text-[#766e65] hover:text-[#4a4643] 
+                    className="group p-1.5 text-[#766e65] hover:text-[#4a4643] 
                       dark:text-[#bdb7ae] dark:hover:text-[#e8e3d9] 
-                      transition-all duration-300 
-                      hover:scale-110 active:scale-95"
+                      transition-all duration-300 rounded-full
+                      hover:scale-110 active:scale-95 hover:bg-opacity-10 hover:bg-[#766e65]"
                     aria-label="Play/Pause"
                   >
-                    {isPlaying ? <Pause size={18} /> : <Play size={18} />}
+                    {isPlaying ? (
+                      <div className="flex items-center space-x-1">
+                        <Pause size={16} />
+                        <div className="flex space-x-0.5">
+                          {[1,2,3].map((i) => (
+                            <div 
+                              key={i}
+                              className={`w-0.5 h-2 bg-current transform origin-bottom animate-music-bar-${i}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <Play size={16} />
+                    )}
                   </button>
                 </div>
               ) : (
@@ -153,11 +169,13 @@ const Navbar = () => {
                   onClick={connectSpotify}
                   className="group p-2 text-[#766e65] hover:text-[#4a4643] 
                     dark:text-[#bdb7ae] dark:hover:text-[#e8e3d9] 
-                    transition-all duration-300 
-                    hover:scale-110 active:scale-95"
+                    transition-all duration-300 rounded-full
+                    hover:scale-110 active:scale-95 hover:bg-opacity-10 hover:bg-[#766e65]
+                    relative"
                   aria-label="Connect Spotify"
                 >
-                  <Music size={18} />
+                  <Music size={18} className="animate-pulse" />
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-ping" />
                 </button>
               )}
 
