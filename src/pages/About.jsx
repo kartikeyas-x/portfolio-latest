@@ -667,19 +667,19 @@ const AboutPage = () => {
               </code>
             </pre> */}
             
-            <pre className="text-[#e8e3d9] font-mono text-sm">
-  <code>
+            <pre className="text-[#e8e3d9] font-mono text-sm w-full overflow-x-auto">
+  <code className="block">
     {Object.entries(skills).map(([category, skillList], index) => (
       <div key={index} className="py-2">
         <div className="text-[#a69887]">
-          <span className="font-semibold">{category.replace(/([A-Z])/g, ' $1').toUpperCase()}:</span>
+          <span className="font-semibold whitespace-normal break-words">{category.replace(/([A-Z])/g, ' $1').toUpperCase()}:</span>
         </div>
         <div className="mt-2">
           <div 
             onMouseEnter={() => setActiveSkill(skillList)}
             onMouseLeave={() => setActiveSkill(null)}
             className={`
-              cursor-pointer py-1 px-2
+              cursor-pointer py-1 px-2 whitespace-normal break-words
               ${activeSkill === skillList 
                 ? 'bg-[#8b7355] dark:bg-[#a69887] text-[#f5f2eb]' 
                 : 'hover:bg-[#363030]'}
