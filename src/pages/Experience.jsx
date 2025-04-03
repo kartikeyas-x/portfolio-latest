@@ -1404,12 +1404,49 @@ import AnimatedText from '../components/AnimatedText';
 
 const ExperienceTimeline = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const timelineData = [
+    {
+      date: "March 2025 – Present",
+      role: "Software Development Engineer - I",
+      type: "Full-time", 
+      company: "TAILSHUG",
+      location: "Bangalore, Karnataka",
+      description: "Developing a cross-platform pet services app using Flutter, NestJS, and TypeScript, implementing scalable APIs, real-time booking, secure authentication, and optimized state management."
+    },
+    {
+      date: "May 2024 – July 2024",
+      role: "Full-Stack Developer Intern",
+      type: "Internship",
+      company: "Aayush Bharat - ABNW",
+      description: "Developed a new business vertical, improving operational efficiency by 30%, using React.js, Node.js, PHP, and MySQL. Implemented JWT-based authentication, reducing unauthorized access incidents by 20%. Automated bulk onboarding processes, reducing employee processing time by 40%, and integrated a secure payment gateway. Designed features such as consultation booking, e-commerce modules, and analytics dashboards, increasing user engagement by 15%. Optimized system performance, reducing load times by 25% while ensuring cross-device responsiveness."
+    },
+    {
+      date: "May 2024 – June 2024",
+      role: "React Internship",
+      type: "Internship",
+      company: "Celebal Technologies",
+      description: "Developed dynamic web applications using React.js, applying component-based architecture to enhance code modularity and maintainability. Built scalable web components by implementing effective state management and lifecycle methods."
+    },
+    {
+      date: "May 2023 – June 2023",
+      role: "Web Development Intern",
+      type: "Internship",
+      company: "Immortal Ventures (Remote)",
+      description: "Built a high-performance MERN stack application, reducing page load time by 15%, with a focus on modular architecture and seamless UX. Managed development timelines and collaborated with cross-functional teams, improving project delivery efficiency by 10%."
+    },
+    {
+      date: "May 2023 – June 2023",
+      role: "Front End Developer Intern",
+      type: "Internship",
+      company: "IBM – EDUNET FOUNDATION (Remote)",
+      description: "Designed and implemented a Nike clone website using HTML, CSS, and JavaScript, ensuring pixel-perfect design and mobile responsiveness. Developed reusable front-end components, improving development speed by 20%, while ensuring seamless user experience."
+    }
+  ];
+
   const [mousePositions, setMousePositions] = useState(
     Array(timelineData.length).fill().map(() => ({ x: 0, y: 0 }))
   );
   const cardRefs = useRef([]);
-
-  const timelineData = [
     {
       date: "March 2025 – Present",
       role: "Software Development Engineer - I",
