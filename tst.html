@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff0099, #493240);
+        }
+
+        .btn {
+            padding: 12px 20px;
+            background: #ffcc00;
+            color: #000;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff9900;
+            transform: scale(1.1);
+        }
+
+        .portfolio .gallery {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card video {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>I'm <span class="typing"></span></h1>
+            <p>Your energetic host, bringing events to life!</p>
+            <a href="#portfolio" class="btn">See My Work</a>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Passionate anchor and event host, making moments unforgettable with my words and presence.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>My Work</h2>
+            <div class="gallery">
+                <div class="card"><video src="video1.mp4" controls></video></div>
+                <div class="card"><video src="video2.mp4" controls></video></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <a href="mailto:anchor@example.com" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Anchor Portfolio | Designed with ❤️</p>
+    </footer>
+
+    <script>
+        const words = ["a Professional Anchor", "Your Event Host", "a Storyteller"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let typingElement = document.querySelector(".typing");
+
+        function typeText() {
+            if (charIndex < words[wordIndex].length) {
+                typingElement.textContent += words[wordIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 100);
+            } else {
+                setTimeout(eraseText, 2000);
+            }
+        }
+
+        function eraseText() {
+            if (charIndex > 0) {
+                typingElement.textContent = words[wordIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(eraseText, 50);
+            } else {
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(typeText, 500);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(typeText, 500);
+        });
+    </script>
+</body>
+</html>

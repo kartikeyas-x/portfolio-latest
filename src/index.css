@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .transition-all {
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+@layer base {
+  :root {
+    background-color: theme('colors.light.bg');
+    color: theme('colors.light.primary');
+  }
+
+  body.dark {
+    background-color: theme('colors.dark.bg');
+    color: theme('colors.dark.primary');
+    animation: darkSpread 1s ease-out;
+    position: relative;
+    overflow: hidden;
+  }
+
+  body.dark::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle at center, 
+      rgba(26, 22, 20, 0.9) 0%, 
+      rgba(26, 22, 20, 0.7) 50%, 
+      rgba(26, 22, 20, 0) 100%
+    );
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    opacity: 0;
+    animation: darkSpread 1s ease-out forwards;
+    z-index: -1;
+  }
+}
+
+@keyframes darkSpread {
+  0% { 
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% { 
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

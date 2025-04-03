@@ -1,0 +1,299 @@
+/* .experience-container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.experience-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #3b3a36;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 80%;
+    max-width: 900px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.timeline-item:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+}
+
+.timeline-item .timeline-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #3b3a36;
+    position: relative;
+    top: 8px;
+    transition: all 0.3s ease;
+}
+
+.timeline-item .timeline-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.timeline-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.timeline-item .company {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6c6a5b;
+}
+
+.timeline-item .date {
+    font-size: 0.9rem;
+    color: #9e9a8d;
+}
+
+.timeline-item .description {
+    font-size: 1rem;
+    color: #585650;
+}
+
+.timeline-item:hover .timeline-circle {
+    background-color: #4a4a48;
+}
+
+.timeline-item:nth-child(odd) {
+    transform: translateX(-30px);
+}
+
+.timeline-item:nth-child(even) {
+    transform: translateX(30px);
+}
+
+.timeline-item:nth-child(odd):hover {
+    transform: translateX(0);
+}
+
+.timeline-item:nth-child(even):hover {
+    transform: translateX(0);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        width: 95%;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-item .company, .timeline-item .date {
+        font-size: 0.9rem;
+    }
+
+    .experience-title {
+        font-size: 2rem;
+    }
+} */
+
+/* ExperienceTimeline.css */
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Minimal and modern font */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  :root {
+    --background-color: #f4f1ea;
+    --text-color: #3b3a36;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.08);
+    --circle-color: #8c7b75;
+    --hover-color: #665e57;
+  }
+  
+  .dark {
+    --background-color: #1e1e1e;
+    --text-color: #eaeaea;
+    --card-bg: #2a2a2a;
+    --card-shadow: rgba(255, 255, 255, 0.1);
+    --circle-color: #6a5f57;
+    --hover-color: #8c7b75;
+  }
+  
+  /* Subtle Background Animation */
+  .experience-container {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+  }
+  
+  .experience-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1), transparent);
+    animation: animate-bg 10s linear infinite;
+    z-index: -1;
+  }
+  
+  @keyframes animate-bg {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-10%, -10%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  .experience-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 10px var(--card-shadow);
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
+    cursor: pointer;
+  }
+  
+  .timeline-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px var(--hover-color);
+  }
+  
+  .timeline-item .timeline-circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--circle-color);
+    transition: background-color 0.3s ease;
+  }
+  
+  .timeline-item:hover .timeline-circle {
+    background-color: var(--hover-color);
+  }
+  
+  .timeline-item .timeline-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .timeline-item h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .timeline-item .company {
+    font-size: 1rem;
+    color: var(--hover-color);
+  }
+  
+  .timeline-item .date {
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+  
+  .timeline-item .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
+  
+  /* Dark Mode Toggle Button */
+  .toggle-dark-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    transition: all 0.3s ease;
+  }
+  
+  .toggle-dark-mode:hover {
+    background-color: var(--hover-color);
+    color: var(--background-color);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .timeline-item {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .timeline-item h3 {
+      font-size: 1.2rem;
+    }
+  
+    .toggle-dark-mode {
+      top: 15px;
+      right: 15px;
+      font-size: 0.9rem;
+    }
+  }
+  

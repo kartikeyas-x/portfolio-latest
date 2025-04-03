@@ -1,0 +1,12 @@
+/* src/styles/styles.css */
+.card-hover {
+    background: linear-gradient(135deg, #a89f91, #d0b79b); /* Neutral earthy tones */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  }
+  
+  .card-hover:hover {
+    transform: scale(1.05) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #d0b79b, #a89f91); /* On hover, reverse the gradient for more depth */
+  }
+  
