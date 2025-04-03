@@ -475,12 +475,10 @@ import AnimatedText from "../components/AnimatedText";
 
 const AboutPage = () => {
   const skills = {
-    frontend: "Html, CSS, JavaScript, React.js, Figma",
-    backend: "Node.js,",
-    database: "MongoDB, MySQL",
-    frameworksAndTools: "JWT, WordPress, LaTeX",
-    versionControl: "Git, GitHub",
-    languages: "CPP, English (Full Professional Proficiency), Hindi (Full Professional Proficiency), Punjabi (Limited Working Proficiency)"
+    frontend: "HTML, CSS, JavaScript, React.js, TypeScript, Flutter",
+    backend: "Node.js, Nest.js, Express.js, MySQL, MongoDB",
+    tools: "Git, Github, Figma, Postman",
+    languages: "C++, Python, English (Full Professional Proficiency), Hindi (Full Professional Proficiency), Punjabi (Limited Working Proficiency)"
   };
 
   const [activeSkill, setActiveSkill] = useState(null);
