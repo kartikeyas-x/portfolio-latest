@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const YingYangCats = () => {
   const [clickCount, setClickCount] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
+  const [hoverSide, setHoverSide] = useState(null);
 
   const handleClick = () => {
     setClickCount(prev => prev + 1);
