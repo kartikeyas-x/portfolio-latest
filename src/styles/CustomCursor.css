@@ -5,15 +5,15 @@
   border: 1px solid #8b7355;
   border-radius: 50%;
   position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
+  top: -6px;
+  left: -6px;
   pointer-events: none;
   z-index: 9999;
-  transition: all 0.3s ease;
+  will-change: transform;
   mix-blend-mode: difference;
   backdrop-filter: invert(1);
   animation: cursorPulse 2s infinite;
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
 }
 
 .cursor-trail {

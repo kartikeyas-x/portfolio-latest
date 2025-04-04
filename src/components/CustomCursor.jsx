@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import '../styles/CustomCursor.css';
 
 const CustomCursor = () => {
+  const cursorRef = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [trailPositions, setTrailPositions] = useState([]);
   const [isHovering, setIsHovering] = useState(false);
@@ -9,13 +10,13 @@ const CustomCursor = () => {
 
   useEffect(() => {
     const updatePosition = (e) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      }
       setPosition({ x: e.clientX, y: e.clientY });
       setTrailPositions(prev => {
         const newPositions = [...prev, { x: e.clientX, y: e.clientY }];
-        if (newPositions.length > 5) {
-          return newPositions.slice(1);
-        }
-        return newPositions;
+        return newPositions.slice(-3); // Reduce trail length for better performance
       });
     };
 
