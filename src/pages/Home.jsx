@@ -96,12 +96,11 @@ const Home = () => {
       <div className="relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="min-h-screen flex flex-col justify-center pt-20">
-            <motion.div
-              initial={{ opacity: 0, y: -20, rotateX: -20 }}
+            <motion.span
+              initial={{ opacity: 0, y: -20 }}
               animate={{ 
                 opacity: 1, 
                 y: 0,
-                rotateX: 0,
                 transition: {
                   type: "spring",
                   stiffness: 200,
@@ -109,25 +108,18 @@ const Home = () => {
                 }
               }}
               whileHover={{
-                scale: 1.1,
-                rotateX: 10,
-                rotateY: 5,
                 color: "#8b7355",
-                textShadow: "0 10px 20px rgba(0,0,0,0.2)",
+                letterSpacing: "0.2em",
                 transition: {
                   type: "spring",
-                  stiffness: 400,
-                  damping: 10
+                  stiffness: 300,
+                  damping: 15
                 }
               }}
-              style={{ 
-                perspective: "1000px",
-                transformStyle: "preserve-3d"
-              }}
-              className="text-sm tracking-widest text-[#6b563c] dark:text-[#c4b5a1] mb-4 font-medium pl-1 cursor-pointer inline-block"
+              className="text-sm tracking-widest text-[#6b563c] dark:text-[#c4b5a1] mb-4 font-medium pl-1 cursor-pointer"
             >
               HELLO, I AM
-            </motion.div>
+            </motion.span>
 
             <motion.div 
               ref={nameRef} 
@@ -136,7 +128,8 @@ const Home = () => {
             >
               <AnimatedText 
                 text="Kartikeya"
-                className="mb-4 text-7xl md:text-8xl font-lora dark:text-[#e8e3d9]" //Added dark mode class here.  Requires knowing the original class structure of AnimatedText
+                className="mb-4"
+                textSize="text-7xl md:text-8xl font-lora"
                 letterSpacing="tracking-tight"
                 lineHeight="leading-none"
                 isTransitioning={false}
@@ -162,7 +155,7 @@ const Home = () => {
                 >
                   <AnimatedText 
                     text={translations[currentLanguage]}
-                    className="mt-4 font-lora dark:text-[#e8e3d9]" //Added dark mode class here. Requires knowing the original class structure of AnimatedText
+                    className="mt-4 font-lora"
                     textSize="text-7xl md:text-8xl"
                     letterSpacing="tracking-tight"
                     lineHeight="leading-none"
