@@ -7,10 +7,12 @@ import Projects from './pages/Projects';
 import ExperienceTimeline from './pages/Experience';  // Correct import
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
 
 const App = () => {
   return (
     <Router>
+      <CustomCursor />
       <div className="bg-[#f5f5f0] min-h-screen">
         <Navbar />
         <Routes>
