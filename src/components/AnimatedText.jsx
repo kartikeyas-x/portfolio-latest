@@ -34,19 +34,21 @@ const letterVariants = {
     y: 0, 
     opacity: 1, 
     scale: 1,
-    rotate: 0,
-    color: "var(--text-primary)"
+    rotate: 0 
   },
   hover: (custom) => ({
-      y: Math.sin(custom * 0.3) * 8,
-      scale: 1.1,
-      color: "var(--hover-color)",
-      transition: {
-        duration: 0.7,
-        ease: [0.43, 0.13, 0.23, 0.96],
-        delay: custom * 0.03
-      }
-    }),
+    y: -8,
+    scale: 1.1,
+    color: "#8b7355",
+    textShadow: "0px 0px 0px rgba(0, 0, 0, 0.1)",
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 10,
+      mass: 0.8,
+      delay: custom * 0.03
+    }
+  }),
   exit: {
     y: 20,
     opacity: 0,
@@ -268,8 +270,7 @@ const AnimatedText = ({
                     word={word}
                     onHover={onWordHover}
                     onClick={onWordClick}
-                    className="transition-colors duration-300"
-style={{ color: 'var(--text-primary)' }}
+                    className={`text-[#28221E] dark:text-[#e8e3d9] transition-colors duration-300`}
                     isTransitioning={isTransitioning}
                     textColor={textColor}
                   />
