@@ -285,4 +285,4 @@ const AnimatedText = ({
 };
 
 export default memo(AnimatedText);
-export default TypewriterText;
+export { TypewriterText };
