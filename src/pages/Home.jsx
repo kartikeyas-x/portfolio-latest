@@ -99,17 +99,7 @@ const Home = () => {
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              whileHover={{ 
-                scale: 1.05,
-                letterSpacing: "0.2em",
-                color: "#8b7355",
-                transition: {
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 10
-                }
-              }}
-              className="text-sm tracking-widest text-[#6b563c] dark:text-[#c4b5a1] mb-4 font-medium pl-1 inline-block cursor-pointer"
+              className="text-sm tracking-widest text-[#6b563c] dark:text-[#c4b5a1] mb-4 font-medium pl-1"
             >
               HELLO, I AM
             </motion.span>
