@@ -29,7 +29,9 @@ const ProjectCard = ({ project, className = '' }) => {
   return (
     <div 
       className={`relative overflow-hidden group rounded-lg transition-all duration-500 ease-in-out 
-        border border-transparent hover:border-[#8b7355]/20 
+        border border-transparent hover:border-[#8b7355]/20
+        before:absolute before:inset-0 before:-z-10 before:animate-gradient-xy
+        before:bg-gradient-to-r before:from-[#8b7355]/10 before:via-[#a69887]/10 before:to-[#8b7355]/10
         ${className}`}
       onMouseMove={handleMouseMove}
       style={{
