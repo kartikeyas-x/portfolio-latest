@@ -136,8 +136,7 @@ const Home = () => {
             >
               <AnimatedText 
                 text="Kartikeya"
-                className="mb-4"
-                textSize="text-7xl md:text-8xl font-lora"
+                className="mb-4 text-7xl md:text-8xl font-lora dark:text-[#e8e3d9]" //Added dark mode class here.  Requires knowing the original class structure of AnimatedText
                 letterSpacing="tracking-tight"
                 lineHeight="leading-none"
                 isTransitioning={false}
@@ -163,7 +162,7 @@ const Home = () => {
                 >
                   <AnimatedText 
                     text={translations[currentLanguage]}
-                    className="mt-4 font-lora"
+                    className="mt-4 font-lora dark:text-[#e8e3d9]" //Added dark mode class here. Requires knowing the original class structure of AnimatedText
                     textSize="text-7xl md:text-8xl"
                     letterSpacing="tracking-tight"
                     lineHeight="leading-none"

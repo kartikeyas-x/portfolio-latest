@@ -1,3 +1,12 @@
+
+:root {
+  --hover-color: #8b7355;
+}
+
+.dark {
+  --hover-color: #c4b5a1;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
