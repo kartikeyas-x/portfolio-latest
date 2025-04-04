@@ -138,7 +138,11 @@ const AnimatedLetter = memo(({ char, index, isSpace, isHovered, className }) => 
       onMouseLeave={() => controls.start("initial")}
       style={{
         display: 'inline-block',
-        willChange: 'transform'
+        willChange: 'transform',
+        color: 'var(--text-primary)',
+        background: isHovered ? 'linear-gradient(45deg, #c4b5a1, #e8e3d9)' : 'inherit',
+        WebkitBackgroundClip: isHovered ? 'text' : 'none',
+        WebkitTextFillColor: isHovered ? 'transparent' : 'inherit'
       }}
     >
       {char}
