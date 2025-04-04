@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import '../styles/CustomCursor.css';
 
@@ -59,7 +58,8 @@ const CustomCursor = () => {
       <div
         className={`custom-cursor ${isHovering ? 'hover' : ''} ${isClicking ? 'click' : ''}`}
         style={{
-          transform: `translate(${position.x}px, ${position.y}px)`,
+          left: `${position.x}px`,
+          top: `${position.y}px`,
         }}
       />
     </>
