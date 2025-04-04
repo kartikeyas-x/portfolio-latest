@@ -54,8 +54,6 @@ html {
   :root {
     background-color: theme('colors.light.bg');
     color: theme('colors.light.primary');
-    --hover-color: #8b7355;
-    --text-primary: #28221E;
   }
 
   body.dark {
@@ -64,9 +62,6 @@ html {
     animation: darkSpread 1s ease-out;
     position: relative;
     overflow: hidden;
-    --hover-color: #c4b5a1;
-    --text-primary: #e8e3d9;
-
   }
 
   body.dark::before {

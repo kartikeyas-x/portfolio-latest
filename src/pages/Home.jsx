@@ -109,15 +109,14 @@ const Home = () => {
               }}
               whileHover={{
                 color: "#8b7355",
-                y: -8,
-                scale: 1.1,
+                letterSpacing: "0.2em",
                 transition: {
-                  duration: 0.3,
                   type: "spring",
-                  stiffness: 300
+                  stiffness: 300,
+                  damping: 15
                 }
               }}
-              className="text-sm tracking-widest text-[#6b563c] dark:text-[#c4b5a1] mb-4 font-medium pl-1 cursor-pointer transition-all duration-300"
+              className="text-sm tracking-widest text-[#6b563c] dark:text-[#c4b5a1] mb-4 font-medium pl-1 cursor-pointer"
             >
               HELLO, I AM
             </motion.span>
