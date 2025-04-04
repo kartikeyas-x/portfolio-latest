@@ -1,31 +1,32 @@
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { useFBX, OrbitControls } from "@react-three/drei";
 
-const Model = ({ modelPath }) => {
-  const fbx = useFBX(modelPath);
-  return <primitive object={fbx} scale={0.01} />;
-};
+import React, { useRef } from 'react';
+import { useFrame } from '@react-three/fiber';
+import { OrbitControls, Float } from '@react-three/drei';
+import { Model } from './Model';
 
-const Background3DModel = ({ modelPath }) => {
+export default function Background3DModel() {
+  const modelRef = useRef();
+
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
+    modelRef.current.position.y = Math.sin(time) * 0.2;
+  });
+
   return (
-    <Canvas
-      style={{
-        width: "100%",
-        height: "100%",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        zIndex: -1,
-      }}
-    >
-      <ambientLight intensity={0.8} />
-      <Suspense fallback={null}>
-        <Model modelPath={modelPath} />
-      </Suspense>
-      <OrbitControls />
-    </Canvas>
+    <>
+      <OrbitControls enableZoom={false} enablePan={false} />
+      <Float
+        speed={2}
+        rotationIntensity={1}
+        floatIntensity={1}
+        floatingRange={[0, 0.5]}
+      >
+        <group ref={modelRef}>
+          <Model />
+        </group>
+      </Float>
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 10, 5]} intensity={1} />
+    </>
   );
-};
-
-export default Background3DModel;
+}
