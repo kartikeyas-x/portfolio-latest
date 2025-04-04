@@ -34,7 +34,8 @@ const letterVariants = {
     y: 0, 
     opacity: 1, 
     scale: 1,
-    rotate: 0 
+    rotate: 0,
+    color: "var(--text-primary)"
   },
   hover: (custom) => ({
       y: Math.sin(custom * 0.3) * 8,
@@ -267,7 +268,8 @@ const AnimatedText = ({
                     word={word}
                     onHover={onWordHover}
                     onClick={onWordClick}
-                    className={`text-[#28221E] dark:text-[#e8e3d9] transition-colors duration-300`}
+                    className="transition-colors duration-300"
+style={{ color: 'var(--text-primary)' }}
                     isTransitioning={isTransitioning}
                     textColor={textColor}
                   />
