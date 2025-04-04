@@ -37,16 +37,19 @@ const letterVariants = {
     rotate: 0 
   },
   hover: (custom) => ({
-    y: -8,
-    scale: 1.1,
+    y: -15,
+    z: 50,
+    rotateX: custom % 2 === 0 ? 15 : -15,
+    rotateY: custom % 2 === 0 ? 10 : -10,
+    scale: 1.2,
     color: "#8b7355",
-    textShadow: "0px 0px 0px rgba(0, 0, 0, 0.1)",
+    textShadow: "0 20px 30px rgba(0,0,0,0.2)",
     transition: {
       type: "spring",
       stiffness: 400,
-      damping: 10,
+      damping: 8,
       mass: 0.8,
-      delay: custom * 0.03
+      delay: custom * 0.04
     }
   }),
   exit: {
