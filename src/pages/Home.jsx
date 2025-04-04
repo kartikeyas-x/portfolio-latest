@@ -97,14 +97,9 @@ const Home = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="min-h-screen flex flex-col justify-center pt-20">
             <motion.span
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ 
-                scale: 1.05,
-                color: "#8b7355",
-                transition: { type: "spring", stiffness: 400 }
-              }}
-              className="text-sm tracking-widest text-[#6b563c] dark:text-[#c4b5a1] mb-4 font-medium pl-1 inline-block cursor-pointer"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-sm tracking-widest text-[#6b563c] dark:text-[#c4b5a1] mb-4 font-medium pl-1"
             >
               HELLO, I AM
             </motion.span>
