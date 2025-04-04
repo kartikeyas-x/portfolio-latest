@@ -7,17 +7,37 @@
   position: fixed;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  mix-blend-mode: difference;
+  backdrop-filter: invert(1);
+}
+
+.cursor-trail {
+  width: 8px;
+  height: 8px;
+  background: rgba(139, 115, 85, 0.3);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.1s ease;
   mix-blend-mode: difference;
 }
 
 .custom-cursor.hover {
-  transform: scale(1.5);
-  background-color: rgba(139, 115, 85, 0.1);
+  transform: scale(1.8);
+  background-color: rgba(139, 115, 85, 0.2);
+  border-width: 1px;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.click {
+  transform: scale(0.8);
+  background-color: rgba(139, 115, 85, 0.4);
 }
 
 @media (max-width: 768px) {
-  .custom-cursor {
+  .custom-cursor, .cursor-trail {
     display: none;
   }
 }
